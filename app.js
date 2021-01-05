@@ -1,18 +1,20 @@
-var usedNums = new Array(76);
+//Create blank array to store used numbers
+let usedNums = [];
 
+//Create a loop to input each square number into the main function
 function newCard() {
-	//Starting loop through each square card
-	for(var i=0; i < 24; i++) {  //<--always this code for loops. change in red
+		for(let i=0; i < 24; i++) {
 		setSquare(i);
 	}
 }
 
+//Main function
 function setSquare(thisSquare) {
-	var currSquare = "square"+thisSquare;
-	var newNum;
+	let currSquare = "square"+thisSquare;
+	let newNum;
 	
-	var colPlace =new Array(0,1,2,3,4,0,1,2,3,4,0,1,3,4,0,1,2,3,4,0,1,2,3,4);
-	
+//Returns 5 random numbers between 1-75, 16-90, 31-105, 46-120, 61-135. Why? Remove
+	let colPlace =[0,1,2,3,4,0,1,2,3,4,0,1,3,4,0,1,2,3,4,0,1,2,3,4];
 	do {
 		newNum =(colPlace[thisSquare] * 15) + getNewNum() + 1;
 	}
